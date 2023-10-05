@@ -1,0 +1,45 @@
+<br /><br />
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-5 card mb-6">
+            <form [formGroup]="userLoginForm" (ngSubmit)="login()" novalidate>
+              <h1 id="applicationName" class="text-center">HaalCHaal</h1>
+              <br /><br />
+              <!-- Name input -->
+              <div class="form-outline mb-4 form-group">
+                <input id="form2Example1" class="form-control" [ngClass]="(ulf['userName'].touched && ulf['userName'].invalid)?'form-control is-invalid':((ulf['userName'].touched && ulf['userName'].valid)?'form-control is-valid':'form-control')" formControlName="userName" placeholder="user name" />
+
+              </div>
+
+              <!-- Password input -->
+              <div class="form-outline mb-4 form-group">
+                <input type="password" id="form2Example2" type="password" [ngClass]="(ulf['password'].touched && ulf['password'].invalid)?'form-control is-invalid':((ulf['password'].touched && ulf['password'].valid)?'form-control is-valid':'form-control')" formControlName="password" placeholder="password" />
+
+              </div>
+
+
+
+              <!-- Submit button -->
+              <div class="d-flex justify-content-center">
+                <button type="submit" [disabled]="userLoginForm.invalid" class="btn btn-primary mb-4 btn-lg loginbutton">Sign in</button>
+              </div>
+            </form>
+
+            <!-- Register buttons -->
+            <div class="text-center">
+              <p>or sign up with:</p>
+              <button class="btn btn-primary" (click)="gmailLogin()" type="submit">Login With Google</button>
+            </div>
+            <br /><br />
+
+          </div>
+        </div>
+        <br />
+
+        <div class="row justify-content-center">
+          <div class="col-md-5 card mb-6 row" id="reg">
+            <h6> Don't have an account? <a routerLink="/register">Sign up</a></h6>
+          </div>
+        </div>
+        <br /><br /><br />
+      </div>

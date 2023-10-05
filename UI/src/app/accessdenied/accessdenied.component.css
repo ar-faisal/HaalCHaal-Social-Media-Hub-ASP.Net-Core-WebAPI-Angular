@@ -1,0 +1,9 @@
+.no-posts {
+  /* Add your custom styles here */
+  color: red; /* Example: Change text color to red */
+  font-weight: bold; /* Example: Make text bold */
+  /* Add any other styles you want */
+  text-align: center;
+  margin: 10% 0px;
+  font-size: 40px;
+}

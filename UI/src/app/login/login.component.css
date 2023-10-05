@@ -1,0 +1,22 @@
+@font-face {
+  font-family: 'YourFontName';
+  src: url('../../assets/fonts/Albondigas.ttf') format('truetype');
+}
+#applicationName {
+  font-family: 'YourFontName', sans-serif;
+  font-size : 100px;
+}
+.form-group{
+  margin: 0px 70px;
+
+}
+.loginbutton {
+  display: flex !important;
+  justify-content: center !important;
+  padding: 3px 123px;
+}
+
+#reg{
+    padding:20px;
+    text-align:center;
+}

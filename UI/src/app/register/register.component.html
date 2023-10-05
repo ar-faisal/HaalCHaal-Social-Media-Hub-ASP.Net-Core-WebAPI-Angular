@@ -1,0 +1,57 @@
+<br /><br />
+      <div class="container">
+        <div class="row justify-content-center align-items-center">
+
+          <div class="col-md-5 card mb-6">
+            <form [formGroup]="userRegistrationForm" (ngSubmit)="register()" novalidate>
+              <h1 id="applicationName" class="text-center">HaalCHaal</h1>
+              <br />
+              <div class="card-body">
+                <div class="form-outline mb-4 form-group">
+                  <input [ngClass]="(urf['userName'].touched && urf['userName'].invalid)?'form-control is-invalid':((urf['userName'].touched && urf['userName'].valid)?'form-control is-valid':'form-control')" formControlName="userName" placeholder="user name">
+
+                </div>
+                <div class="form-outline mb-4 form-group">
+                  <input type="email" [ngClass]="(urf['email'].touched && urf['email'].invalid)?'form-control is-invalid':((urf['email'].touched && urf['email'].valid)?'form-control is-valid':'form-control')" formControlName="email" placeholder="user email" />
+
+                </div>
+
+                <div class="form-outline mb-4 form-group">
+                  <input type="password" [ngClass]="(urf['password'].touched && urf['password'].invalid)?'form-control is-invalid':((urf['password'].touched && urf['password'].valid)?'form-control is-valid':'form-control')" class="form-control" formControlName="password" placeholder="password" />
+
+                </div>
+
+                <div class="form-outline mb-4 form-group">
+                  <input type="password" [ngClass]="(urf['confirmPassword'].touched && urf['confirmPassword'].invalid)?'form-control is-invalid':((urf['confirmPassword'].touched && urf['confirmPassword'].valid)?'form-control is-valid':'form-control')" class="form-control" formControlName="confirmPassword" placeholder="confirm password" />
+
+                </div>
+
+
+                <div class="custom-file form-group  justify-content-center align-items-center">
+                  <input type="file" #fileInput (change)="previewImage(fileInput)" class="form-control-file" accept="image/*">
+                  <label class="custom-file-label">{{ selectedFileName || 'Select Profile Picture' }}</label>
+                </div>
+                <div class="image-preview  justify-content-center align-items-center ">
+                  <img [src]="selectedImage" alt="Image Preview" *ngIf="selectedImage">
+                </div>
+
+
+
+
+                <div class="d-flex justify-content-center">
+                  <button class="btn btn-primary btn-lg regbutton" [disabled]="userRegistrationForm.invalid || !fileSelected" type="submit">Register</button>
+                </div>
+              </div>
+            </form>
+          </div>
+
+        </div>
+        <br />
+        <div class="row justify-content-center">
+          <div class="col-md-5 card mb-6 row" id="log">
+            <h6> Have an account? <a routerLink="/login">Log in</a></h6>
+          </div>
+        </div>
+        <br /><br />
+      </div>
+

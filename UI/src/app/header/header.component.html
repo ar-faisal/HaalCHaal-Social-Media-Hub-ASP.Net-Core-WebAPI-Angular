@@ -1,0 +1,43 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" id ="applicationName" routerLink="home">HaalCHaal</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="home" routerLinkActive="active">Home </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" *ngIf="this.localStorage.get('Obj')"  routerLink="Writeposts" routerLinkActive="active">Write Post</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" *ngIf="this.localStorage.get('Obj')"  routerLink="Explore" routerLinkActive="active">Explore</a>
+        </li>
+        
+      </ul>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" *ngIf="!this.localStorage.get('Obj')" routerLink="login" routerLinkActive="active">Login </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" *ngIf="this.localStorage.get('Obj')"  (click)="logout()" routerLinkActive="active" style="cursor: pointer;">Logout</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" *ngIf="!this.localStorage.get('Obj')" routerLink="register" routerLinkActive="active">Register</a>
+        </li>
+        <li class="nav-item" *ngIf="this.localStorage.get('Obj')"  (click)="profileId()" style="cursor: pointer;">
+          <a class="nav-link " routerLinkActive="active" data-custom-data="this.localStorage.get('Obj').id">
+            {{this.localStorage.get('Obj').userName}} | {{this.localStorage.get('Obj').role}}
+            
+            <img *ngIf="localStorage.get('Obj')" [src]="imageToShow" class="rounded-circle" style="width:35px;height:28px!important;border:2px solid black">
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+

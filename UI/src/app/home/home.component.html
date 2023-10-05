@@ -1,0 +1,37 @@
+<br />
+<br />
+<br />
+
+<div class="custom-container">
+  <div class="row clearfix">
+    <div class="col-lg-4 col-md-12 col-12" *ngFor="let story of posts">
+      <div class="card single_post row">
+        <div class="col-lg-12 profileimgname" (click)="profileId(story.hcUserId)">
+          <img [src]="'data:image/jpeg;base64,' + story.imageBase64PP" class="rounded-circle" style="width:35px;height:35px!important" alt="Awesome Image">   {{ story.hcUserName }}
+
+        </div>
+
+        <div class="image-preview col-lg-12">
+          <img [src]="'data:image/jpeg;base64,' + story.imageBase64" alt="Awesome Image">
+
+        </div>
+        <div class="col-lg-12 btmnametitle">
+          <span class="fontweightbtm">{{ story.hcUserName }}:</span> {{ story.pTitle }}
+        </div>
+        <div class="col-lg-12 description">
+          <span class="fontweightbtm">Description:</span> {{ story.pDescription }}
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+  <div class="center-container">
+    <!-- ... Previous content ... -->
+    <!-- Additional div to display when 'posts' is empty with CSS class 'no-posts' -->
+    <div *ngIf="!posts || posts.length === 0" class="no-posts">
+      <p>Follow People To Get Their Daily Updates ;)</p>
+    </div>
+    <br /><br /><br /><br /><br /><br />
+  </div>
+</div>
+

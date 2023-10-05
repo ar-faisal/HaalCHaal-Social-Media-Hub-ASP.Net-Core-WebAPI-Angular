@@ -1,0 +1,11 @@
+@font-face {
+  font-family: 'YourFontName';
+  src: url('../../assets/fonts/Albondigas.ttf') format('truetype');
+}
+
+#applicationName {
+  font-family: 'YourFontName', sans-serif;
+  font-size: 25px;
+  letter-spacing: 2px;  
+  padding: 0px;
+}

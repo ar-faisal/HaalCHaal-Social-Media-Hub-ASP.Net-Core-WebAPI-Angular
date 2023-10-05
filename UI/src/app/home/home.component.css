@@ -1,0 +1,64 @@
+.custom-container {
+  max-width: 1400px; /* Adjust the maximum width to your preference */
+  margin: 0 auto; /* Center the container horizontally */
+  padding: 20px; /* Add padding to the sides for spacing */
+}
+
+.card {
+  /* Set a fixed height for the card (adjust as needed) */
+  height: 500px;
+  margin: 20px 10px;
+}
+
+.profileimgname {
+  margin: 8px 0px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.image-preview {
+  margin-bottom: 10px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  width: 100%;
+  height: 75%;
+}
+
+  .image-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border: 1px solid #acaaaa;
+  }
+
+.fontweightbtm {
+  font-weight: 500;
+}
+
+.btmnametitle {
+  white-space: nowrap; /* Prevent text from wrapping to the next line */
+  overflow: hidden; /* Hide any overflowing text */
+  text-overflow: ellipsis; /* Add ellipsis (...) when text overflows */
+  display: inline-block; /* Ensure that the element stays on a single line */
+  max-width: 100%;
+}
+
+.description {
+  white-space: nowrap; /* Prevent text from wrapping to the next line */
+  overflow: hidden; /* Hide any overflowing text */
+  text-overflow: ellipsis; /* Add ellipsis (...) when text overflows */
+  display: inline-block; /* Ensure that the element stays on a single line */
+  max-width: 100%;
+}
+
+.no-posts {
+  /* Add your custom styles here */
+  color: red; /* Example: Change text color to red */
+  font-weight: bold; /* Example: Make text bold */
+  /* Add any other styles you want */
+  text-align:center;
+  margin:10% 0px;
+  font-size: 40px;
+}

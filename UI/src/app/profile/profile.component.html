@@ -1,0 +1,48 @@
+
+<div class="container">
+  <div class="row clearfix upprow" *ngIf="profileData">    
+    
+    <div class="col-md-6 upprowimg">
+      <img [src]="'data:image/jpeg;base64,' + profileData.imageBase64PP" class="upprow-rounded-circle" alt="Awesome Image">
+
+    </div>
+    <div class="col-md-6 center-content">
+      <ul>
+        <li>{{ profileData.hcUserName }}</li>
+        <li><button *ngIf="!isFollowing.isFollowing" (click)="follow()">Follow</button></li>
+        <li><button *ngIf="isFollowing.isFollowing" (click)="unfollow()">UnFollow</button></li>
+
+      </ul>
+
+    </div>
+  </div>
+  </div>
+
+<div class="container">
+  <div class="row clearfix" *ngIf="profileData">
+
+
+
+    <div class="col-lg-4 col-md-12 col-12" *ngFor="let data of profileData.storyResponse">
+      <div class="card single_post row">
+        
+        <div class="image-preview col-lg-12">
+          <img [src]="'data:image/jpeg;base64,' + data.imageBase64" alt="Awesome Image">
+
+        </div>
+        <div class="col-lg-12 btmnametitle">
+          <span class="fontweightbtm">{{ profileData.hcUserName }}:</span> {{data.pTitle }}
+        </div>
+        <div class="col-lg-12 description">
+          <span class="fontweightbtm">Description:</span> {{ data.pDescription }}
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+  </div>
+</div>
